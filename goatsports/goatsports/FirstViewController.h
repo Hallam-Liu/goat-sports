@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 #import "AFHTTPSessionManager.h"
-#define kTimeOutInterval 30
+#define requestTime 3000
 #pragma mark - 创建请求者
 @interface FirstViewController : UIViewController
 {
@@ -21,8 +21,8 @@
 }
 -(IBAction)sendMessage:(id)sender;
 -(IBAction)signUp:(id)sender;
+-(void)postmessage:paramater;
 
-+(AFHTTPSessionManager *)manager;
 // 请求超时的时间
 typedef void (^SuccessBlock)(NSDictionary *dict, BOOL success); // 访问成功block
 typedef void (^AFNErrorBlock)(NSError *error); // 访问失败block
