@@ -147,27 +147,15 @@
                                 <rect key="frame" x="268" y="327" width="77" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="发送验证码"/>
-                                <connections>
-                                    <action selector="sendMessage:" destination="9pv-A4-QxB" eventType="touchUpInside" id="dTT-o4-YKN"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L0T-tF-FM4">
                                 <rect key="frame" x="172" y="478" width="31" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="注册"/>
-                                <connections>
-                                    <action selector="signUp:" destination="9pv-A4-QxB" eventType="touchUpInside" id="n6b-BJ-4AQ"/>
-                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
-                    <connections>
-                        <outlet property="passWord" destination="pdO-Wq-aKe" id="4XH-hm-iF1"/>
-                        <outlet property="telePhoneNumber" destination="YXv-pl-61a" id="IKs-nl-ul4"/>
-                        <outlet property="userName" destination="cuZ-Uc-pe7" id="RgP-0j-G3P"/>
-                        <outlet property="verifyCode" destination="ZUK-6g-KX2" id="Ctf-6G-vTU"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
@@ -216,6 +204,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
                 <tabBarController id="49e-Tb-3d3" sceneMemberID="viewController">
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="W28-zg-YXA">
@@ -227,7 +216,6 @@
                         <segue destination="8dG-a8-4bd" kind="relationship" relationship="viewControllers" id="eWs-IL-ao6"/>
                     </connections>
                 </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-145" y="105"/>
         </scene>
