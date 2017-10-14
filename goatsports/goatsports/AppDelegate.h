@@ -7,15 +7,24 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SecondViewController.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 {
     IBOutlet UITextField * userName;
     IBOutlet UITextField * password;
+    IBOutlet UIView * mainView;
+    
 }
+@property (weak, nonatomic) IBOutlet UIView *loginView;
 @property (strong, nonatomic) UIWindow *window;
-@property (nonatomic, strong) UIView *LoginView;
+//@property (strong, nonatomic) UIViewController *Login;
 -(IBAction)login:(id)sender;
 
+
 @end
+
+
+
+
 

@@ -12,13 +12,14 @@
 
 @end
 
+
 @implementation AppDelegate
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    UIView *LoginView = [UIView alloc];
-    [LoginView center];
+//    UIView *LoginView = [UIView alloc];
+//    [LoginView center];
     return YES;
 }
 
@@ -49,14 +50,28 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
+
 -(IBAction)login:(id)sender{
-    
-    UIAlertView *alert = [[UIAlertView alloc]init];
-    [alert addButtonWithTitle:@"OK" ];
-    [alert setMessage:@"username or password incorrect"];
-    [alert setTitle:@"login error"];
-    
-    [alert show];
+    NSString *User = userName.text;
+    NSString *Password = password.text;
+    if ([User isEqual: @"Liuhr"] && [Password  isEqual: @"haoran"])
+    {
+        NSLog(@"12334");
+        //SecondViewController * view = [[SecondViewController alloc]init];
+        
+        [_loginView addSubview:mainView];
+        [_loginView bringSubviewToFront:mainView];
+
+    }
+    else
+    {
+        UIAlertView *alert = [[UIAlertView alloc]init];
+        [alert addButtonWithTitle:@"OK" ];
+        [alert setMessage:@"username or password incorrect"];
+        [alert setTitle:@"login error"];
+        [alert show];
+    }
+        
 }
 
 @end
