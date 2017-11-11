@@ -21,7 +21,7 @@
 }
 -(IBAction)sendMessage:(id)sender;
 -(IBAction)signUp:(id)sender;
--(void)postmessage:paramater;
+-(id)postmessage:(NSDictionary*)dict protal:(NSString*)protal;
 
 // 请求超时的时间
 typedef void (^SuccessBlock)(NSDictionary *dict, BOOL success); // 访问成功block

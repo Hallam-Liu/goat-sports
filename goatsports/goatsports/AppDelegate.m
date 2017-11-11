@@ -61,6 +61,10 @@
         
         [_loginView addSubview:mainView];
         [_loginView bringSubviewToFront:mainView];
+        
+       
+        NSDictionary *signup = @{@"stadium_id":@"1"};
+        [visitMainwindow postmessage:signup protal:@"20202"];
 
     }
     else

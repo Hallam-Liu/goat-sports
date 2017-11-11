@@ -8,13 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import "SecondViewController.h"
-
+#import "FirstViewController.h"
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 {
     IBOutlet UITextField * userName;
     IBOutlet UITextField * password;
     IBOutlet UIView * mainView;
-    
+    FirstViewController *visitMainwindow;
 }
 @property (weak, nonatomic) IBOutlet UIView *loginView;
 @property (strong, nonatomic) UIWindow *window;

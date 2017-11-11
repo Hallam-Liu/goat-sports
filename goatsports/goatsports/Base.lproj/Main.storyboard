@@ -211,12 +211,6 @@
         <!--SecondViewController-->
         <scene sceneID="wg7-f3-ORb">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
-                <customObject id="2Gw-wW-IPd" customClass="SecondViewController">
-                    <connections>
-                        <outlet property="mainview" destination="8rJ-Kc-sve" id="0bS-tP-reS"/>
-                    </connections>
-                </customObject>
                 <viewController id="8rJ-Kc-sve" userLabel="SecondViewController" customClass="SecondViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="L7p-HK-0SC"/>
@@ -231,6 +225,13 @@
                         <outlet property="view" destination="QS5-Rx-YEW" id="6nU-RG-Aq8"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
+                <customObject id="2Gw-wW-IPd" customClass="SecondViewController">
+                    <connections>
+                        <outlet property="mainview" destination="8rJ-Kc-sve" id="0bS-tP-reS"/>
+                    </connections>
+                </customObject>
+                <customObject id="gp1-tI-WJ7" userLabel="mainWindow"/>
             </objects>
             <point key="canvasLocation" x="647" y="-660"/>
         </scene>

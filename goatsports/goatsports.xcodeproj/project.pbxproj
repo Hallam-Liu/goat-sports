@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8C5047641FB2C80600EF0CAB /* NSObject+mainwindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C5047631FB2C80600EF0CAB /* NSObject+mainwindow.m */; };
 		8C8604A11F76353500F77D08 /* AFNetworking in Resources */ = {isa = PBXBuildFile; fileRef = 8C86049F1F76353500F77D08 /* AFNetworking */; };
 		8C8604A21F76353500F77D08 /* UIKit+AFNetworking in Resources */ = {isa = PBXBuildFile; fileRef = 8C8604A01F76353500F77D08 /* UIKit+AFNetworking */; };
 		8C8604AE1F763D5F00F77D08 /* AFURLRequestSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C8604AD1F763D5F00F77D08 /* AFURLRequestSerialization.m */; };
@@ -45,6 +46,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8C5047621FB2C80600EF0CAB /* NSObject+mainwindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+mainwindow.h"; sourceTree = "<group>"; };
+		8C5047631FB2C80600EF0CAB /* NSObject+mainwindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+mainwindow.m"; sourceTree = "<group>"; };
 		8C86049F1F76353500F77D08 /* AFNetworking */ = {isa = PBXFileReference; lastKnownFileType = folder; path = AFNetworking; sourceTree = "<group>"; };
 		8C8604A01F76353500F77D08 /* UIKit+AFNetworking */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "UIKit+AFNetworking"; sourceTree = "<group>"; };
 		8C8604A41F76355000F77D08 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
@@ -166,6 +169,8 @@
 				8CD9CD1D1F7624BC00B329C7 /* Info.plist */,
 				8CD9CD091F7624BC00B329C7 /* Supporting Files */,
 				8C8604C21F91617C00F77D08 /* global_Notification.h */,
+				8C5047621FB2C80600EF0CAB /* NSObject+mainwindow.h */,
+				8C5047631FB2C80600EF0CAB /* NSObject+mainwindow.m */,
 			);
 			path = goatsports;
 			sourceTree = "<group>";
@@ -335,6 +340,7 @@
 				8C8604B81F763DEE00F77D08 /* AFNetworkReachabilityManager.m in Sources */,
 				8C8604B61F763DD500F77D08 /* AFURLSessionManager.m in Sources */,
 				8C8604B41F763DBC00F77D08 /* AFSecurityPolicy.m in Sources */,
+				8C5047641FB2C80600EF0CAB /* NSObject+mainwindow.m in Sources */,
 				8C8604B21F763D9D00F77D08 /* AFHTTPSessionManager.m in Sources */,
 				8C8604B01F763D7D00F77D08 /* AFURLResponseSerialization.m in Sources */,
 				8C8604AE1F763D5F00F77D08 /* AFURLRequestSerialization.m in Sources */,
