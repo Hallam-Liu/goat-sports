@@ -13,11 +13,16 @@
 {
     IBOutlet UITextField * userName;
     IBOutlet UITextField * password;
-    IBOutlet UIView * mainView;
-    FirstViewController *visitMainwindow;
+    IBOutlet UIViewController *V1;
+
 }
-@property (weak, nonatomic) IBOutlet UIView *loginView;
 @property (strong, nonatomic) UIWindow *window;
+@property (weak, nonatomic) IBOutlet UIView *loginView;
+
+
+
+
+
 //@property (strong, nonatomic) UIViewController *Login;
 -(IBAction)login:(id)sender;
 

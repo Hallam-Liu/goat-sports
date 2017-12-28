@@ -17,7 +17,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    Response=[NSDictionary dictionary];
     // Do any additional setup after loading the view, typically from a nib.
+    
 }
 
 
@@ -26,9 +28,14 @@
     // Dispose of any resources that can be recreated.
 }
 
--(id)postmessage:(NSDictionary*)dict protal:(NSString*)protal {
+
+
+-(NSDictionary*)postmessage:(NSDictionary*)dict protal:(NSString*)protal success:(HttpSuccess)success failure:(HttpFailure)failure{
     AFHTTPSessionManager *sendsession = [AFHTTPSessionManager manager];
     NSString *baseUrl = @"http://47.94.135.66:80/API";
+  //  NSString *Response = [[NSString alloc]init];
+    
+    __block NSDictionary *respond = nil;
     //-----------------------Liuhr
     BOOL isYes = [NSJSONSerialization isValidJSONObject:dict];
     
@@ -61,6 +68,7 @@
     sendsession.requestSerializer.timeoutInterval = requestTime;
     sendsession.requestSerializer = [AFJSONRequestSerializer serializer];
     sendsession.responseSerializer =  [AFJSONResponseSerializer serializer];
+    //sendsession.responseSerializer = [AFHTTPResponseSerializer serializer];
     sendsession.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
     sendsession.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/json"];
     sendsession.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"application/json"];
@@ -69,21 +77,55 @@
     NSString *para = [NSJSONSerialization JSONObjectWithData:jsonData options:kNilOptions error:&error];
 
     [sendsession.requestSerializer setValue:protal forHTTPHeaderField:@"portal"];
-    
     [sendsession POST:baseUrl parameters:para progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         
+        respond = responseObject;
+        success(respond);
+        Response=responseObject;
+        respondArray =[NSArray arrayWithArray:[respond objectForKey:@"sta_list"]];
+        NSLog(@"____________________%lu",(unsigned long)[respondArray count]);
         NSLog(@"responseObject = %@",responseObject);
+        //dict = [FirstViewController dictionaryWithJsonString:responseObject];
+        for (NSString *s in [Response allValues]) {
+            NSLog(@"value: %@", s);
+        }
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         NSLog(@"error = %@",error);
+        failure(error);
     }];
-
-
-    return self;
+   
+    if([respond count]==0){
+        NSLog(@"wtf111");
+    }
+  
+    for (NSString *s in [Response allValues]) {
+        NSLog(@"222value: %@", s);
+        NSLog(@"123");
+        
+    
+    }
+    return respond;
 }
 
+
+
 -(IBAction)sendMessage:(id)sender{
-    NSDictionary *signup = @{@"stadium_id":@"1"};
-    [self postmessage:signup protal:@"20202"];
+    NSDictionary *signup = @{@"city_id":@"0"};
+    [self postmessage:signup protal:@"20201" success:^(NSDictionary *dic){
+        for (NSString *s in [dic allValues]) {
+            NSLog(@"222value: %@", s);
+            
+        }
+        } failure:^(NSError* error){
+            NSLog(@"lllll");
+        }];
+    for (NSInteger*i;i<1000;i++){
+        for (NSString *s in [Response allValues]) {
+            NSLog(@"222value: %@", s);
+            
+        }
+    
+    }
 //    AFHTTPSessionManager *session = [AFHTTPSessionManager manager];
 //    NSString *baseUrl = @"http://47.94.135.66:80/API";
 //    NSString *dataPath = [[NSBundle mainBundle] pathForResource:@"data" ofType:@"json"];
@@ -140,9 +182,8 @@
 //    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
 //        NSLog(@"error = %@",error);
 //    }];
-
-   
-    
 }
+
+
 
 @end

@@ -7,7 +7,8 @@
 //
 
 #import "AppDelegate.h"
-
+#import <UIKit/UIKit.h>   
+@interface ViewController : UIViewController<UITextFieldDelegate> @end
 @interface AppDelegate ()
 
 @end
@@ -16,10 +17,11 @@
 @implementation AppDelegate
 
 
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-//    UIView *LoginView = [UIView alloc];
-//    [LoginView center];
+    [V1 viewDidLoad];
+    
     return YES;
 }
 
@@ -57,15 +59,22 @@
     if ([User isEqual: @"Liuhr"] && [Password  isEqual: @"haoran"])
     {
         NSLog(@"12334");
-        //SecondViewController * view = [[SecondViewController alloc]init];
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
         
-        [_loginView addSubview:mainView];
-        [_loginView bringSubviewToFront:mainView];
         
+        
+        SecondViewController *VC = [storyboard instantiateViewControllerWithIdentifier:@"MyView"];
        
-        NSDictionary *signup = @{@"stadium_id":@"1"};
-        [visitMainwindow postmessage:signup protal:@"20202"];
-
+        //UINavigationController * nav = [[UINavigationController alloc]initWithRootViewController:[[SecondViewController alloc]init]];
+        //VC= nav;
+        //显示新视图控制器
+        //VC 新视图控制器对象
+        //parameter 2 是否有动画效果。
+        //parameter 3 切换结束后功能调用
+        
+        [V1 presentViewController:VC animated:YES completion:nil];
+    
+     
     }
     else
     {

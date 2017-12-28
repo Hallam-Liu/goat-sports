@@ -8,10 +8,26 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SecondViewController : UIViewController{
-    IBOutlet UIViewController *mainview;
+@interface SecondViewController : UIViewController
+<UITableViewDataSource,
+UITableViewDelegate>
+{
+    
+    IBOutlet UIToolbar *Toolbar;
+    IBOutlet UIView *mainView;
+    IBOutlet UITableView *Table;
+    IBOutlet UIView *InfoView;
+    IBOutlet UITableView *LikeView;
+    
+    NSDictionary * Reponse;
+    NSArray* array;
 }
 
--(id)showMainwindow;
+@property (strong, nonatomic) IBOutlet UIBarButtonItem *showtable;
+@property (strong, nonatomic) IBOutlet UIBarButtonItem *showInformation;
+@property (strong, nonatomic) IBOutlet UIBarButtonItem *showlike;
+
+//@property (strong, nonatomic) IBOutlet UIView *mainView;
+//@property (strong, nonatomic) UIWindow *mainwindow;
 @end
 
