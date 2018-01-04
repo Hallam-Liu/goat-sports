@@ -93,6 +93,14 @@
                                     <action selector="signUp:" destination="9pv-A4-QxB" eventType="touchUpInside" id="m9E-y9-HgG"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="For-5x-gCc">
+                                <rect key="frame" x="164" y="535" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="test:" destination="9pv-A4-QxB" eventType="touchUpInside" id="ho7-qf-d5n"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
@@ -106,7 +114,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="750" y="-320"/>
+            <point key="canvasLocation" x="749.60000000000002" y="-320.68965517241384"/>
         </scene>
         <!--Login VIew-->
         <scene sceneID="Zs0-vp-pWq">
@@ -171,7 +179,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xmu-bv-dTA" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <customObject id="pWt-n1-2F1" customClass="AppDelegate">
                     <connections>
-                        <outlet property="V1" destination="ECL-Ke-5qR" id="vKU-om-ShP"/>
+                        <outlet property="V1" destination="ECL-Ke-5qR" id="X9h-aD-YsG"/>
                         <outlet property="loginView" destination="FJE-cf-sIn" id="qVS-l6-uZH"/>
                         <outlet property="password" destination="sOX-78-Rae" id="clE-dQ-32q"/>
                         <outlet property="userName" destination="xkL-Ez-Ucg" id="76W-85-OQ4"/>
@@ -183,54 +191,15 @@
         <!--SecondViewController-->
         <scene sceneID="wg7-f3-ORb">
             <objects>
-                <viewController storyboardIdentifier="MyView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="8rJ-Kc-sve" userLabel="SecondViewController" customClass="SecondViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="L7p-HK-0SC"/>
-                        <viewControllerLayoutGuide type="bottom" id="Djb-ko-YwX"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" restorationIdentifier="mainview" id="QS5-Rx-YEW">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="haoran" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="97" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="n4U-hV-X3F">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="624"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <color key="separatorColor" red="0.2188950811" green="0.28842576050000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <inset key="separatorInset" minX="16" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                <connections>
-                                    <outlet property="dataSource" destination="2Gw-wW-IPd" id="dRr-XL-tbS"/>
-                                    <outlet property="delegate" destination="2Gw-wW-IPd" id="M28-68-RQU"/>
-                                </connections>
-                            </tableView>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" barStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="BKC-i5-zEN">
-                                <rect key="frame" x="-1" y="700" width="376" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
-                                <items>
-                                    <barButtonItem title="123" width="122" id="chK-57-hbb">
-                                        <inset key="imageInsets" minX="0.0" minY="-22" maxX="0.0" maxY="0.0"/>
-                                    </barButtonItem>
-                                    <barButtonItem title="456" width="131" id="fMS-Oq-ILY"/>
-                                    <barButtonItem title="789" width="85" id="133-Rh-D5p"/>
-                                </items>
-                            </toolbar>
-                        </subviews>
-                    </view>
+                <viewController storyboardIdentifier="MyView" title="球馆" useStoryboardIdentifierAsRestorationIdentifier="YES" id="8rJ-Kc-sve" userLabel="SecondViewController" customClass="SecondViewController" sceneMemberID="viewController">
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="boolean" keyPath="keyPath" value="YES"/>
                     </userDefinedRuntimeAttributes>
-                    <connections>
-                        <outlet property="Toolbar" destination="BKC-i5-zEN" id="Ueh-Aw-U7J"/>
-                        <outlet property="showInformation" destination="133-Rh-D5p" id="5lj-V2-0f8"/>
-                        <outlet property="showlike" destination="chK-57-hbb" id="gQw-kn-ZaJ"/>
-                        <outlet property="showtable" destination="fMS-Oq-ILY" id="8Zh-Ln-UyV"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
                 <customObject id="2Gw-wW-IPd" customClass="SecondViewController">
                     <connections>
-                        <outlet property="Table" destination="n4U-hV-X3F" id="W3x-Ec-TiC"/>
-                        <outlet property="mainView" destination="QS5-Rx-YEW" id="U53-Au-umy"/>
+                        <outlet property="viewController" destination="8rJ-Kc-sve" id="XPJ-et-LVM"/>
                     </connections>
                 </customObject>
                 <customObject id="gp1-tI-WJ7" userLabel="mainWindow"/>

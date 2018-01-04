@@ -1,21 +1,22 @@
 //
-//  MainViewController.m
+//  VCLike.m
 //  goatsports
 //
-//  Created by 刘浩然 on 12/19/17.
+//  Created by 刘浩然 on 12/30/17.
 //  Copyright © 2017 刘浩然. All rights reserved.
 //
 
-#import "MainViewController.h"
+#import "VCLike.h"
 
-@interface MainViewController ()
+@interface VCLike ()
 
 @end
 
-@implementation MainViewController
+@implementation VCLike
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     // Do any additional setup after loading the view.
 }
 
@@ -24,6 +25,12 @@
     // Dispose of any resources that can be recreated.
 }
 
+
+-(void)viewDidAppear:(BOOL)animated{
+
+
+
+}
 /*
 #pragma mark - Navigation
 

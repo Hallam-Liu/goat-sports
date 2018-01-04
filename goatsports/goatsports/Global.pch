@@ -1,0 +1,18 @@
+//
+//  Global.pch
+//  goatsports
+//
+//  Created by 刘浩然 on 12/29/17.
+//  Copyright © 2017 刘浩然. All rights reserved.
+//
+
+#ifndef Global_pch
+#define Global_pch
+
+ NSDictionary * Response;
+
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#endif /* Global_pch */

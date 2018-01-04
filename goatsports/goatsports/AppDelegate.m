@@ -59,21 +59,21 @@
     if ([User isEqual: @"Liuhr"] && [Password  isEqual: @"haoran"])
     {
         NSLog(@"12334");
+        
+        V1 = [[UIViewController alloc]init];
+       V1= [UIApplication sharedApplication].keyWindow.rootViewController;
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-        
-        
-        
         SecondViewController *VC = [storyboard instantiateViewControllerWithIdentifier:@"MyView"];
-       
-        //UINavigationController * nav = [[UINavigationController alloc]initWithRootViewController:[[SecondViewController alloc]init]];
-        //VC= nav;
+        NSLog(@"____%@",storyboard);
+        
         //显示新视图控制器
         //VC 新视图控制器对象
         //parameter 2 是否有动画效果。
         //parameter 3 切换结束后功能调用
-        
+        NSLog(@"test1234");
+        [V1.view.window makeKeyAndVisible];
         [V1 presentViewController:VC animated:YES completion:nil];
-    
+        NSLog(@"test222");
      
     }
     else

@@ -9,6 +9,7 @@
 #import "SecondViewController.h"
 #import "FirstViewController.h"
 #import "AppDelegate.h"
+NSDictionary *dict;
 @interface SecondViewController ()
 
 @end
@@ -18,36 +19,72 @@
 FirstViewController *Data;
 
 - (void)viewDidLoad {
-    // Do any additional setup after loading the view, typically from a nib.
-    self.view.backgroundColor= [UIColor whiteColor];
-    Toolbar = [[UIToolbar alloc]initWithFrame:CGRectMake(0, 623, 376, 400)];
-    //Table.delegate =self;
-    //Table.dataSource =self;
-    [self showtheMain];
+    NSDictionary *firstPage = @{@"city_id":@"0"};
+    CGRect rect = [[UIScreen mainScreen] bounds];
+    CGSize size = rect.size;
+    CGFloat width = size.width;    
+    CGFloat height = size.height;
+    tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 60,size.width, size.height-120) style:UITableViewStylePlain];
+    tableView.delegate = self;
+    tableView.dataSource=self;
+    self.view.backgroundColor = [UIColor greenColor];
+    UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:viewController];
+    nav.title =@"球馆";
+    [self.view.window addSubview:nav.view];
+    nav.view.backgroundColor = [UIColor whiteColor];
+    VCLike *VClike = [[VCLike alloc]init];
+    VClike.title = @"收藏";
+    VClike.view.backgroundColor = [UIColor blueColor];
+    NSArray *controllerArray = [NSArray arrayWithObjects:nav,VClike,nil];
+    UITabBarController *tab = [[UITabBarController alloc]init];
+    tab.viewControllers = controllerArray;
+    self.view.window.rootViewController = tab;
+    Data = [[FirstViewController alloc]init];
+        [Data postmessage:firstPage protal:@"20201" success:^(NSDictionary *dic){
+            dispatch_async(dispatch_get_main_queue(), ^{
+                //回调或者说是通知主线程刷新，
+                for (NSString *s in [Data->Response allValues]) {
+                    NSLog(@"why cannot go backSecvalue: %@", s);
+                }
+                [nav.view addSubview:tableView];
+                [tableView reloadData];
+            });
+
+        } failure:^(NSError*error){
+            NSLog(@"add tableViewerror%@",error);
+            
+            
+        }];
+    
+   
+   //tab= [UIApplication sharedApplication].keyWindow.rootViewController;
+    tab.view.backgroundColor = [UIColor yellowColor];
+    [self.view addSubview:tab.view];
+    //tab.selectedIndex=1;
+  [self.view.window makeKeyAndVisible];
     _showlike = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(showliked)];
     _showtable =[[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(showtheMain)];
     _showInformation =[[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(showtheInfo)];
     
 }
 
+-(void)updateTableView{
+    
+}
+
 -(void)showliked{
     //[self.view addSubview:InfoView];
     
+    
 }
 -(void)showtheMain{
-     [Table registerClass:[UITableViewCell class] forCellReuseIdentifier:@"haoran"];
-    Data = [[FirstViewController alloc]init];
-    NSDictionary *firstPage = @{@"city_id":@"0"};
-    [Data postmessage:firstPage protal:@"20201" success:^(NSDictionary *dic){
-        [Reponse initWithDictionary:dic];} failure:nil ];
-    //Reponse = [Data postmessage:firstPage protal:@"20201"];
-    [NSThread sleepForTimeInterval:3.0f];
-    NSLog(@"llllllllllll");
-    NSLog(@"%lu",(unsigned long)[Reponse count]);
-    for (NSString *s in [Reponse allValues]) {
+    
+
+    for (NSString *s in [Data->Response allValues]) {
         NSLog(@"Secvalue: %@", s);
     }
-    [self.view addSubview:Table];
+   
+   
 }
 
 -(void)showtheInfo{
@@ -59,7 +96,7 @@ FirstViewController *Data;
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    return 3;
+    return 1;
 
 }
 
@@ -67,22 +104,28 @@ FirstViewController *Data;
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     
-    UITableViewCell *cell = [Table dequeueReusableCellWithIdentifier:@"CellStr"];
     
-
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CellStr"];
+    
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"CellStr"];
         //cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
-    NSArray* array = [Reponse objectForKey:@"sta_list"];
+    NSLog(@"wtfffff%lu",(unsigned long)[Data->Response count]);
+    for (NSString *s in [Data->Response  allValues]) {
+        NSLog(@"fuckyou Secvalue: %@", s);
+    }
+    NSArray* array = [Data->Response  objectForKey:@"sta_list"];
     NSLog(@"%@",array);
     NSDictionary *item = (NSDictionary *)[array objectAtIndex:indexPath.row];
     NSString* str = [item objectForKey:@"name"];
+    
     //NSLog(@"%@",str);
     //NSString *str = @"lllhr";
     
     //cell.textLabel.text = [item objectForKey:@"mainTitleKey"];
     cell.textLabel.text = str;
+    NSLog(@"please log %@",str);
     //cell.detailTextLabel.text = [item objectForKey:@"secondaryTitleKey"];
     //NSString *path = [[NSBundle mainBundle] pathForResource:[item objectForKey:@"imageKey"] ofType:@"png"];
     //UIImage *theImage = [UIImage imageWithContentsOfFile:path];
@@ -116,17 +159,20 @@ FirstViewController *Data;
     
 //}
 
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
 -(void)viewWillAppear:(BOOL)animated{
-
+   
+    //viewController.title = @"gfsgw";
 }
 
 -(void)viewWillDisappear:(BOOL)animated{
-
+    SecondViewController * Table;
+    
 }
 
 -(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{

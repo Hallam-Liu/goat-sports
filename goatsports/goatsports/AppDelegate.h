@@ -14,7 +14,8 @@
     IBOutlet UITextField * userName;
     IBOutlet UITextField * password;
     IBOutlet UIViewController *V1;
-
+//@public UINavigationController *nav;
+    //SecondViewController *VC;
 }
 @property (strong, nonatomic) UIWindow *window;
 @property (weak, nonatomic) IBOutlet UIView *loginView;

@@ -7,12 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-
+//#import "Global.pch"
 #import "AFHTTPSessionManager.h"
 #define requestTime 3000
 #pragma mark - 创建请求者
-//typedef void (^requestSuccessBlock)(NSDictionary *dic);
-//typedef void (^requestFailureBlock)(NSError *error);
+typedef void (^requestSuccessBlock)(NSDictionary *dic);
+typedef void (^requestFailureBlock)(NSError *error);
 
 @interface FirstViewController : UIViewController
 {
@@ -20,11 +20,11 @@
     IBOutlet UITextField * userName;
     IBOutlet UITextField * passWord;
     IBOutlet UITextField * verifyCode;
-    NSDictionary * Response;
     NSArray *respondArray;
     NSInteger *flag;
-    
+    @public NSDictionary * Response;
 }
+-(IBAction)test:(id)sender;
 //宏定义成功block 回调成功后得到的信息
 typedef void (^HttpSuccess)(NSDictionary *dic);
 //宏定义失败block 回调失败信息
