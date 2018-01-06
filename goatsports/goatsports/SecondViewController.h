@@ -11,6 +11,7 @@
 #import "VCLike.h"
 #import "VCInfo.h"
 #import "VCMore.h"
+#import "VCPlayVideo.h"
 //#import "Global.pch"
 @interface SecondViewController : UIViewController
 <UITableViewDataSource,
@@ -19,7 +20,7 @@ UITableViewDelegate>
     IBOutlet UIViewController *viewController;
     @public NSDictionary * ResponseTable;
     NSArray* array;
-    
+    VCPlayVideo *VCplay;
 
 @public UINavigationController *nav;
     NSArray *controllerArray;
