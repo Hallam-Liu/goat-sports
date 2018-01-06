@@ -191,7 +191,7 @@
         <!--SecondViewController-->
         <scene sceneID="wg7-f3-ORb">
             <objects>
-                <viewController storyboardIdentifier="MyView" title="球馆" useStoryboardIdentifierAsRestorationIdentifier="YES" id="8rJ-Kc-sve" userLabel="SecondViewController" customClass="SecondViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MyView" title="球馆" hidesBottomBarWhenPushed="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="8rJ-Kc-sve" userLabel="SecondViewController" customClass="SecondViewController" sceneMemberID="viewController">
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="boolean" keyPath="keyPath" value="YES"/>
                     </userDefinedRuntimeAttributes>

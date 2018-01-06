@@ -9,20 +9,22 @@
 #import <UIKit/UIKit.h>
 #import "FirstViewController.h"
 #import "VCLike.h"
+#import "VCInfo.h"
+#import "VCMore.h"
 //#import "Global.pch"
 @interface SecondViewController : UIViewController
 <UITableViewDataSource,
 UITableViewDelegate>
 {
     IBOutlet UIViewController *viewController;
-    IBOutlet UIToolbar *Toolbar;
-    IBOutlet UIView *mainView;
     @public NSDictionary * ResponseTable;
     NSArray* array;
-    @public UINavigationController *nav;
-    UITableView *tableView;
+    
 
-    UIViewController *ViewLike,*Viewinfo,*ViewMore;
+@public UINavigationController *nav;
+    NSArray *controllerArray;
+    UITableView *tableView;
+    UITabBarController *tab ;
 }
 
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *showtable;
