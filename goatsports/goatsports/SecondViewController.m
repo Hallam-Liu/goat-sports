@@ -82,7 +82,7 @@ FirstViewController *Data;
     tableView.delegate = self;
     tableView.dataSource=self;
     tableView.userInteractionEnabled=YES;
-
+    [nav.view addSubview:tableView];
     //通信字典，发送服务器字符串获取返回值
     NSDictionary *firstPage = @{@"city_id":@"0"};
     Data = [[FirstViewController alloc]init];
@@ -140,10 +140,10 @@ FirstViewController *Data;
     NSArray* array = [Data->Response  objectForKey:@"sta_list"];
     NSLog(@"%@",array);
     NSDictionary *item = (NSDictionary *)[array objectAtIndex:indexPath.row];
-    NSString* str = [item objectForKey:@"name"];
+    //NSString* str = [item objectForKey:@"name"];
+   
     
-    //NSLog(@"%@",str);
-    //NSString *str = @"lllhr";
+    NSString *str = @"lllhr";
     
     //cell.textLabel.text = [item objectForKey:@"mainTitleKey"];
     cell.textLabel.text = str;
@@ -158,9 +158,21 @@ FirstViewController *Data;
 
 -(void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(nonnull NSIndexPath *)indexPath{
     NSLog(@"——————-try to select");
-    VCplay.view.backgroundColor = [UIColor blueColor];
-    [viewController.navigationController pushViewController:VCplay animated:YES];
-
+    VCplay = [[VCPlayVideo alloc]init];
+    //VCplay= [UIApplication sharedApplication].keyWindow.rootViewController;
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    VCplay = [storyboard instantiateViewControllerWithIdentifier:@"Playview"];
+    NSLog(@"____%@",storyboard);
+    
+    //显示新视图控制器
+    //VC 新视图控制器对象
+    //parameter 2 是否有动画效果。
+    //parameter 3 切换结束后功能调用
+    NSLog(@"test1234");
+    [self.view.window makeKeyAndVisible];
+    [self presentViewController:VCplay animated:YES completion:nil];
+    
+    
 }
 
 
@@ -179,7 +191,7 @@ FirstViewController *Data;
 }
 
 -(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
-    [self dismissViewControllerAnimated:YES completion:nil];
+    //[self dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end

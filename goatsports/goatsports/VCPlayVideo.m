@@ -33,5 +33,11 @@
     // Pass the selected object to the new view controller.
 }
 */
+-(IBAction)backMainView:(id)sender{
+    NSLog(@"fuck go back");
+    //[_delegate backMainView];
+    [rootView dismissViewControllerAnimated:YES completion:nil];
+    
+}
 
 @end
