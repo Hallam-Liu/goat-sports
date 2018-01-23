@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		358316D5401DEB08EF39D418 /* libPods-goatsports.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7178CBFD6C012DB729EAB79C /* libPods-goatsports.a */; };
 		8C5047641FB2C80600EF0CAB /* NSObject+mainwindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C5047631FB2C80600EF0CAB /* NSObject+mainwindow.m */; };
 		8C5E58A51FF87AB300712C6E /* VCLike.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C5E58A41FF87AB300712C6E /* VCLike.m */; };
 		8C5E58A81FFED12500712C6E /* VCInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C5E58A71FFED12500712C6E /* VCInfo.m */; };
@@ -52,6 +53,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1EAC759F9077C949C3183AAD /* Pods-goatsports.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-goatsports.debug.xcconfig"; path = "Pods/Target Support Files/Pods-goatsports/Pods-goatsports.debug.xcconfig"; sourceTree = "<group>"; };
+		7178CBFD6C012DB729EAB79C /* libPods-goatsports.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-goatsports.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C5047621FB2C80600EF0CAB /* NSObject+mainwindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+mainwindow.h"; sourceTree = "<group>"; };
 		8C5047631FB2C80600EF0CAB /* NSObject+mainwindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+mainwindow.m"; sourceTree = "<group>"; };
 		8C5E58A31FF87AB300712C6E /* VCLike.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VCLike.h; sourceTree = "<group>"; };
@@ -95,6 +98,7 @@
 		8CD9CD2D1F7624BC00B329C7 /* goatsportsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = goatsportsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CD9CD311F7624BC00B329C7 /* goatsportsUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = goatsportsUITests.m; sourceTree = "<group>"; };
 		8CD9CD331F7624BC00B329C7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C8C833D992ABFDA80693A0EF /* Pods-goatsports.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-goatsports.release.xcconfig"; path = "Pods/Target Support Files/Pods-goatsports/Pods-goatsports.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +106,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				358316D5401DEB08EF39D418 /* libPods-goatsports.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -122,6 +127,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6AB3D081F1B0AF0F7C9E6487 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1EAC759F9077C949C3183AAD /* Pods-goatsports.debug.xcconfig */,
+				C8C833D992ABFDA80693A0EF /* Pods-goatsports.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		8C86049E1F76351A00F77D08 /* AFNetworking */ = {
 			isa = PBXGroup;
 			children = (
@@ -137,6 +151,7 @@
 				8C8604A81F76356500F77D08 /* Security.framework */,
 				8C8604A61F76355600F77D08 /* MobileCoreServices.framework */,
 				8C8604A41F76355000F77D08 /* SystemConfiguration.framework */,
+				7178CBFD6C012DB729EAB79C /* libPods-goatsports.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -157,6 +172,7 @@
 				8CD9CD301F7624BC00B329C7 /* goatsportsUITests */,
 				8CD9CD071F7624BC00B329C7 /* Products */,
 				8C8604A31F76355000F77D08 /* Frameworks */,
+				6AB3D081F1B0AF0F7C9E6487 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -234,9 +250,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8CD9CD361F7624BC00B329C7 /* Build configuration list for PBXNativeTarget "goatsports" */;
 			buildPhases = (
+				3CDD07E6E588590A48F9B774 /* [CP] Check Pods Manifest.lock */,
 				8CD9CD021F7624BC00B329C7 /* Sources */,
 				8CD9CD031F7624BC00B329C7 /* Frameworks */,
 				8CD9CD041F7624BC00B329C7 /* Resources */,
+				13FBDA72B6D2B3F4114E7CF8 /* [CP] Embed Pods Frameworks */,
+				466FF8F8D9E8DCAA90F30352 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -358,6 +377,57 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		13FBDA72B6D2B3F4114E7CF8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-goatsports/Pods-goatsports-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3CDD07E6E588590A48F9B774 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-goatsports-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		466FF8F8D9E8DCAA90F30352 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-goatsports/Pods-goatsports-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		8CD9CD021F7624BC00B329C7 /* Sources */ = {
@@ -528,6 +598,7 @@
 		};
 		8CD9CD371F7624BC00B329C7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1EAC759F9077C949C3183AAD /* Pods-goatsports.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_OBJC_ARC = YES;
@@ -545,6 +616,7 @@
 		};
 		8CD9CD381F7624BC00B329C7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C8C833D992ABFDA80693A0EF /* Pods-goatsports.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_OBJC_ARC = YES;

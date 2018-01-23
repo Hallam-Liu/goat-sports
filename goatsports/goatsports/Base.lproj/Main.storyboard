@@ -209,7 +209,7 @@
         <!--Root View-->
         <scene sceneID="C7r-r0-g4O">
             <objects>
-                <viewController storyboardIdentifier="Playview" id="S6s-jz-oQ1" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Playview" id="S6s-jz-oQ1" customClass="VCPlayVideo" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="TTl-2W-nKc"/>
                         <viewControllerLayoutGuide type="bottom" id="b2w-G9-1zI"/>

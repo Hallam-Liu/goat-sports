@@ -7,14 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <PLPlayerKit/PLPlayerKit.h>
 
-@interface VCPlayVideo : UIViewController
+@interface VCPlayVideo : UIViewController<PLPlayerDelegate>
 {
     UINavigationController *navPlay;
     IBOutlet UIViewController * rootView;
     
 }
 //代理对象, 执行协议.
-
+@property (nonatomic, strong) PLPlayer  *player;
 -(IBAction)backMainView:(id)sender;
 @end

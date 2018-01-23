@@ -16,7 +16,18 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    //self.view.backgroundColor = [UIColor greenColor];
     // Do any additional setup after loading the view.
+    PLPlayerOption *option = [PLPlayerOption defaultOption];
+    [option setOptionValue:@15 forKey:PLPlayerOptionKeyTimeoutIntervalForMediaPackets];
+    NSURL *url = [NSURL URLWithString:@"http://47.94.135.66/AceTennis/C000001C001V01/20180109/H-0730-0800.mp4"];
+    self.player = [PLPlayer playerWithURL:url option:option];
+    self.player.delegate = self;
+    
+    [self.view addSubview:self.player.playerView];
+    [self.player play];
+    
+
 }
 
 - (void)didReceiveMemoryWarning {
