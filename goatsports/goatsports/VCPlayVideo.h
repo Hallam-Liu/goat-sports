@@ -17,5 +17,7 @@
 }
 //代理对象, 执行协议.
 @property (nonatomic, strong) PLPlayer  *player;
+@property (nonatomic, weak) UIActivityIndicatorView *activityIndicatorView;
+@property (nonatomic, assign) int reconnectCount;
 -(IBAction)backMainView:(id)sender;
 @end
