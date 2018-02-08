@@ -28,6 +28,7 @@ static NSString *status[] = {
     @"PLPlayerStatusError",
     @"PLPlayerStatusCompleted"
 };
+
 @interface VCPlayVideo ()
 <
 PLPlayerDelegate,
@@ -36,6 +37,7 @@ UITextViewDelegate
 @end
 
 @implementation VCPlayVideo
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -66,7 +68,7 @@ UITextViewDelegate
 #endif
     [self setupUI];
     
-    [self startPlayer];
+    //[self startPlayer];
 }
 
 
@@ -81,24 +83,41 @@ UITextViewDelegate
 - (void)setupUI {
     if (self.player.status != PLPlayerStatusError) {
         // add player view
-        UIView *playerView = self.player.playerView;
+       playerView = self.player.playerView;
         if (!playerView.superview) {
+            /*
             playerView.contentMode = UIViewContentModeScaleAspectFit;
+        
             playerView.autoresizingMask = UIViewAutoresizingFlexibleBottomMargin
             | UIViewAutoresizingFlexibleTopMargin
             | UIViewAutoresizingFlexibleLeftMargin
             | UIViewAutoresizingFlexibleRightMargin
             | UIViewAutoresizingFlexibleWidth
             | UIViewAutoresizingFlexibleHeight;
+            */
+            playerView.frame = CGRectMake(16, 158, 343, 212);
+           
             [self.view addSubview:playerView];
             
             // test input
-            UITextView *textView = [[UITextView alloc] initWithFrame:CGRectMake(15, 80, CGRectGetWidth(self.view.bounds) - 30, 150)];
+            UITextView *textView = [[UITextView alloc] initWithFrame:CGRectMake(15, 80, CGRectGetWidth(self.view.bounds) - 30, 40)];
             textView.delegate = self;
             textView.backgroundColor = [UIColor colorWithWhite:0 alpha:0.2];
             textView.textColor = [UIColor colorWithWhite:1 alpha:0.8];
             textView.text = @"我是 TextView";
             [self.view addSubview:textView];
+            
+            //start play
+            
+            UIButton *Beginbutton = [UIButton buttonWithType:UIButtonTypeCustom];
+            Beginbutton.frame = CGRectMake(20,30,200,50);
+            Beginbutton.center =CGPointMake(CGRectGetMidX(self.player.playerView.bounds), CGRectGetMidY(self.player.playerView.bounds));
+            [Beginbutton setTitle:@"Begin" forState:UIControlStateNormal ];
+            [Beginbutton setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
+           
+            [Beginbutton addTarget:self action:@selector(startPlayer) forControlEvents:UIControlEventTouchUpInside];
+            
+            [self.view addSubview:Beginbutton];
             
             // button
             UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -108,9 +127,17 @@ UITextViewDelegate
             [self.view addSubview:button];
             
             UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tap:)];
-            [self.view addGestureRecognizer:tap];
+         
         }
     }
+    
+}
+
+- (IBAction)Play:(id)sender{
+    NSLog(@"lllhrrrplay");
+    
+    //[playerView bringSubviewToFront:playerView];
+    [self startPlayer];
     
 }
 
@@ -119,7 +146,8 @@ UITextViewDelegate
         return;
     }
     UIActivityIndicatorView *activityIndicatorView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhite];
-    activityIndicatorView.center = CGPointMake(CGRectGetMidX(self.view.bounds), CGRectGetMidY(self.view.bounds));
+    //activityIndicatorView.center = CGPointMake(CGRectGetMidX(self.view.bounds), CGRectGetMidY(self.view.bounds));
+     activityIndicatorView.center = CGPointMake(CGRectGetMidX(self.player.playerView.bounds), CGRectGetMidY(self.player.playerView.bounds));
     [self.view addSubview:activityIndicatorView];
     [activityIndicatorView stopAnimating];
     
@@ -127,9 +155,18 @@ UITextViewDelegate
 }
 
 - (void)startPlayer {
+    playerView.contentMode = UIViewContentModeScaleAspectFit;
+    
+    playerView.autoresizingMask = UIViewAutoresizingFlexibleBottomMargin
+    | UIViewAutoresizingFlexibleTopMargin
+    | UIViewAutoresizingFlexibleLeftMargin
+    | UIViewAutoresizingFlexibleRightMargin
+    | UIViewAutoresizingFlexibleWidth
+    | UIViewAutoresizingFlexibleHeight;
     [self addActivityIndicatorView];
     [UIApplication sharedApplication].idleTimerDisabled = YES;
     [self.player play];
+    
 }
 
 #pragma mark - <PLPlayerDelegate>
