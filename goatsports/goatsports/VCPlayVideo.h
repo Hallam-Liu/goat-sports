@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import <AliyunPlayerSDK/AliyunPlayerSDK.h>
+#import <AliyunVodPlayerSDK/AliyunVodPlayerSDK.h>
+#import <AliyunVodPlayerViewSDK/AliyunVodPlayerViewSDK.h>
 @interface VCPlayVideo : UIViewController
 {
     UINavigationController *navPlay;
@@ -15,6 +17,7 @@
     
 }
 //代理对象, 执行协议.
-
+@property (nonatomic,strong)AliyunVodPlayer *aliplayer;
+@property (nonatomic,strong)AliyunVodPlayerView *playerView;
 -(IBAction)backMainView:(id)sender;
 @end

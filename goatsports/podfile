@@ -1,7 +1,7 @@
- platform:ios,'7.0'
- pod 'AFNetworking','~>3.1.0'
-
-
+ platform:ios,'8.0'
+target‘goatsports’ do
+ pod 'AliyunPlayer_iOS'
+end
 
 
 
