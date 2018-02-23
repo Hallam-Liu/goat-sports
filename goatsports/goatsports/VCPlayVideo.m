@@ -121,8 +121,8 @@ UITextViewDelegate
             
             // button
             UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-            button.frame = CGRectMake(15, 400, 320, 44);
-            [button setTitle:@"Jump to safari" forState:UIControlStateNormal];
+            button.frame = CGRectMake(15, 300, 320, 44);
+            [button setTitle:@"Full screen" forState:UIControlStateNormal];
             [button addTarget:self action:@selector(buttonPressed:) forControlEvents:UIControlEventTouchUpInside];
             [self.view addSubview:button];
             
@@ -136,7 +136,6 @@ UITextViewDelegate
 - (IBAction)Play:(id)sender{
     NSLog(@"lllhrrrplay");
     
-    //[playerView bringSubviewToFront:playerView];
     [self startPlayer];
     
 }
@@ -165,6 +164,7 @@ UITextViewDelegate
     | UIViewAutoresizingFlexibleHeight;
     [self addActivityIndicatorView];
     [UIApplication sharedApplication].idleTimerDisabled = YES;
+   
     [self.player play];
     
 }
@@ -220,9 +220,17 @@ UITextViewDelegate
 
 
 - (void)buttonPressed:(id)sender {
+   /*
     dispatch_async(dispatch_get_main_queue(), ^{
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.baidu.com"]];
     });
+    */
+    NSLog(@"quanping");
+    playerView.frame = [[UIScreen mainScreen]bounds];
+    
+    [self.view addSubview:playerView];
+
+    
 }
 /*
 #pragma mark - Navigation
